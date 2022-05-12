@@ -46,12 +46,13 @@
          let input123 = document.getElementById("cena");
         
         function start() {
-        document.getElementById("cenaRopa12").value = window.localStorage.getItem('cenaRopy1');
-        document.getElementById("cenaBenzyna12").value = window.localStorage.getItem('cenaBenzyny1');
         if(document.getElementById("cenaRopa12").value == 0 && document.getElementById("cenaBenzyna12").value == 0) {
             window.localStorage.setItem('cenaRopy1', cenaRopa);
             window.localStorage.setItem('cenaBenzyny1', cenaBenzyna);
-        }    
+        }        
+        document.getElementById("cenaRopa12").value = window.localStorage.getItem('cenaRopy1');
+        document.getElementById("cenaBenzyna12").value = window.localStorage.getItem('cenaBenzyny1');
+        
         
         }
         function policz() {
