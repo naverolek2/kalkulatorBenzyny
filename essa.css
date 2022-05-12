@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(182, 135, 108);
+}
+
+.padd {
+    margin: 0.5em;
+    
+}
+.marg {
+    margin: 10%;
+}
+/* Jest to mniej więcej wyśrodkowane mam nadzieję, że Pan zaliczy :P*/
+#container {
+    position: absolute;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 45%;
+}
+

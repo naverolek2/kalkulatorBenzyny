@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="essa.css">
+</head>
+<body onload="start()">
+    
+
+  <div id="container">
+
+            <h2>Wybierz typ paliwa</h2>
+        
+        <div>
+        <input type="radio"  id="benzyna" name="paliwo" checked>
+                <label for="benzyna">benzyna</label>
+        </div>
+        <div>
+            <input type="radio"  id="ropa" name="paliwo">
+            <label for="ropa">ropa</label>
+        </div>
+        <div>
+        <h3>Cena Ropy</h3>
+        <input type="text" id="cenaRopa12" value="0">
+        <h3>Cena Benzyny</h3>
+        <input type="text" id="cenaBenzyna12" value="0"> 
+        </div>
+        <h3>Podaj ilość paliwa</h3>
+        <input type="text" id="ilosc"> <br>
+        <button onclick="policz()" class="padd">Policz</button>
+        <br>
+        <label for="cena" >Cena wynosi:</label><br>
+        <input type="text" id="cena"  value="0" readonly >
+            
+  </div>
+        
+     <script>
+         let cenaRopa = 7.5;
+         let cenaBenzyna = 6.7;
+         let iloscPaliwa;
+         let cena;
+         let wybor;
+         let input123 = document.getElementById("cena");
+        
+        function start() {
+        document.getElementById("cenaRopa12").value = window.localStorage.getItem('cenaRopy1');
+        document.getElementById("cenaBenzyna12").value = window.localStorage.getItem('cenaBenzyny1');
+        if(document.getElementById("cenaRopa12").value == 0 && document.getElementById("cenaBenzyna12").value == 0) {
+            window.localStorage.setItem('cenaRopy1', cenaRopa);
+            window.localStorage.setItem('cenaBenzyny1', cenaBenzyna);
+        }    
+        
+        }
+        function policz() {
+            iloscPaliwa = document.getElementById("ilosc").value;
+            
+            cenaRopa = document.getElementById("cenaRopa12").value;
+            cenaBenzyna = document.getElementById("cenaBenzyna12").value;
+               
+            if(document.getElementById("benzyna").checked) {
+                cena = cenaBenzyna * iloscPaliwa;
+                input123.value = cena;
+                
+            }
+            if (document.getElementById("ropa").checked) {
+                cena = cenaRopa * iloscPaliwa;
+                input123.value = cena;
+            }
+
+            window.localStorage.setItem('cenaRopy1', document.getElementById("cenaRopa12").value);
+            window.localStorage.setItem('cenaBenzyny1', document.getElementById("cenaBenzyna12").value);
+
+        }
+         
+     </script>
+</body>
+</html>
